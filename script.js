@@ -58,9 +58,8 @@ p.category.toLowerCase().includes("fragrance")
 }
 if(page === "electronics"){
 items = items.filter(p =>
-p.category.toLowerCase().includes("smartphone") ||
 p.category.toLowerCase().includes("laptop") ||
-p.category.toLowerCase().includes("electronics")
+p.category.toLowerCase().includes("mobile-accessories")
 );
 }
 if(filter !== "all"){
@@ -108,4 +107,5 @@ list.innerHTML += `
 totalBox.innerText = "Total: $" + total.toFixed(2);
 
 }
+
 
