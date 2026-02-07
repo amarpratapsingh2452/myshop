@@ -53,8 +53,7 @@ p.category.toLowerCase().includes("food")
 if(page === "beauty"){
 items = items.filter(p =>
 p.category.toLowerCase().includes("beauty") ||
-p.category.toLowerCase().includes("fragrance") ||
-p.category.toLowerCase().includes("skincare")
+p.category.toLowerCase().includes("fragrance")
 );
 }
 if(page === "electronics"){
@@ -109,3 +108,4 @@ list.innerHTML += `
 totalBox.innerText = "Total: $" + total.toFixed(2);
 
 }
+
