@@ -66,13 +66,14 @@ if(filter !== "all"){
 items = items.filter(p => p.price <= Number(filter));
 }
 if(search){
-items = items.filter(p => 
-  p.title.toLowerCase().includes(search) ||
-  p.category.toLowerCase().includes(search) ||
-  p.brand.toLowerCase().includes(search) ||
-  p.tags.some(tag => tag.toLowerCase().includes(search))
-);
+  items = items.filter(p => 
+    p.title.toLowerCase().includes(search) ||
+    p.category.toLowerCase().includes(search) ||
+    p.brand.toLowerCase().includes(search) ||
+    (p.tags && p.tags.some(tag => tag.toLowerCase().includes(search)))
+  );
 }
+
 const box = document.getElementById("products");
 box.innerHTML = "";
 if(items.length === 0){ box.innerHTML = "<p>No products found.</p>"; return; }
@@ -112,6 +113,7 @@ list.innerHTML += `
 totalBox.innerText = "Total: $" + total.toFixed(2);
 
 }
+
 
 
 
