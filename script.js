@@ -1,7 +1,7 @@
 let PRODUCTS = [];
 let cart = [];
 let page = "home";
-fetch("https://dummyjson.com/products?limit=100")
+fetch("https://dummyjson.com/products?limit=5000")
 .then(res => res.json())
 .then(data => { PRODUCTS = data.products; render(); });
 function go(p){
@@ -40,7 +40,9 @@ const search = document.getElementById("searchBox").value.toLowerCase();
 let items = [...PRODUCTS];
 if(page === "accessories"){
 items = items.filter(p =>
-p.category.toLowerCase().includes("watches")
+p.category.toLowerCase().includes("watches")||
+p.category.toLowerCase().includes("sunglasses")||
+p.category.toLowerCase().includes("womens-bags")
 );
 
 }
@@ -53,13 +55,15 @@ p.category.toLowerCase().includes("food")
 if(page === "beauty"){
 items = items.filter(p =>
 p.category.toLowerCase().includes("beauty") ||
-p.category.toLowerCase().includes("fragrance")
+p.category.toLowerCase().includes("fragrance")||
+p.category.toLowerCase().includes("skin-care")
 );
 }
 if(page === "electronics"){
 items = items.filter(p =>
 p.category.toLowerCase().includes("laptop") ||
-p.category.toLowerCase().includes("mobile-accessories")
+p.category.toLowerCase().includes("mobile-accessories") ||
+p.category.toLowerCase().includes("smartphones")
 );
 }
 if(filter !== "all"){
@@ -113,8 +117,6 @@ list.innerHTML += `
 totalBox.innerText = "Total: $" + total.toFixed(2);
 
 }
-
-
 
 
 
