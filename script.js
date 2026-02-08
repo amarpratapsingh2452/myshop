@@ -109,10 +109,11 @@ list.innerHTML += `
 <span>$${item.price}</span>
 <button onclick="removeFromCart(${i})">Remove</button>
 </div>`;
-});z
+});
 totalBox.innerText = "Total: $" + total.toFixed(2);
 
 }
+
 
 
 
