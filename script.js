@@ -67,10 +67,10 @@ items = items.filter(p => p.price <= Number(filter));
 }
 if(search){
   items = items.filter(p => 
-    p.title.toLowerCase().includes(search) //||
-    // p.category.toLowerCase().includes(search) ||
-    // p.brand.toLowerCase().includes(search) ||
-    // (p.tags && p.tags.some(tag => tag.toLowerCase().includes(search)))
+    p.title.toLowerCase().includes(search) ||
+    p.category.toLowerCase().includes(search) ||
+    (p.brand && p.brand.toLowerCase().includes(search)) ||
+    (p.tags && p.tags.some(tag => tag.toLowerCase().includes(search)))
   );
 }
 
@@ -113,6 +113,7 @@ list.innerHTML += `
 totalBox.innerText = "Total: $" + total.toFixed(2);
 
 }
+
 
 
 
